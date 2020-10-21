@@ -6,7 +6,7 @@ class FilterString extends Component {
         this.state = {
             unFilteredArray: ["volkswagen", "toyota", "ford", "nissan", "audi", "volvo"],
             userInput: '',
-            filteredArray: ''
+            filteredArray: []
         }
     }
 
@@ -35,8 +35,8 @@ class FilterString extends Component {
             <div className="puzzleBox filterStringPB">
                 <h4>Filter String</h4>
                 <span className="puzzleText">{ JSON.stringify(this.state.unFilteredArray, null, 10) }</span>
-                <input className="inputLine" onChange={ (e) => this.handleChange(e.target.value) }>
-                </input>
+                <input className="inputLine" onChange={ (e) => this.handleChange(e.target.value) }/>
+                
                 <button className="confirmationButton" onClick={ () => this.filterString(this.state.userInput) }>Filter</button>
                 <span className="resultsBox filterStringRB">{ JSON.stringify(this.state.filteredArray, null, 10) }</span>
             </div>
